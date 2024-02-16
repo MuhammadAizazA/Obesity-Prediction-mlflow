@@ -125,7 +125,10 @@ def save_eval(lgbClassifier_Model,X_train,infer_signature,precision,recall,f1,ac
 
 
 if '__main__'==__name__:
+    import sys
     
+    n = int(sys.argv[1])
+    print(n+1)
     
     params = {
         'objective': 'multiclass',
@@ -140,6 +143,12 @@ if '__main__'==__name__:
         'n_estimators': 1000,
         'random_state': 42
     }
+    
+    params['num_leaves']=int(sys.argv[1])
+    params['learning_rate']=float(sys.argv[2])
+    params['max_depth']=int(sys.argv[3])
+    params['min_child_samples']=int(sys.argv[4])
+    params['n_estimators']=int(sys.argv[5])
     
     Churn_train_path='/home/aizaz/Ubuntu-Workspace/MLOPS/Data/Raw-Data/train.csv'
     Churn_validation_path = '/home/aizaz/Ubuntu-Workspace/MLOPS/Data/Raw-Data/test.csv'
