@@ -154,8 +154,3 @@ if '__main__'==__name__:
     predict(lgbClassifier_Model,X_val,label_encoder)
 
     save_eval(lgbClassifier_Model,X.drop(columns='id'),infer_signature,precision,recall,f1,accuracy)
-
-
-
-
-
